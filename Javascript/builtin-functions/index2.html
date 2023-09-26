@@ -1,0 +1,71 @@
+<script>
+//GOAL Calculate user age based on birthDate and add age to user object 
+    var post1 = {
+        content: 'This is my super post',
+        likes: 200,
+        shares: 10
+    }
+    var post2 = {
+        content: 'this is a boring post',
+        likes: 10,
+        shares: 0
+    }
+
+    var post3 = {
+        content: 'this is mikes post',
+        likes:20,
+        shares: 3
+    }
+
+    var facebookUser1= {
+        userName: 'Anand',
+        password: 'newpwd',
+        email: 'manand@gmail.com',
+        profilePicture: 'reference-image',
+        friends:['raghu','syam','bam'],
+        posts: [post1,post2],
+        birthDate: "1996/08/18"
+        /*greet: function(){
+            console.log('Hello Anand')
+        }*/
+    }
+    //facebookUser1.greet() //--> functions(methods) on objects
+
+    var facebookUser2={
+        userName: 'Mikes', 
+        password:'newpass',
+        email: 'example@gmail.com',
+        profilePicture: 'reference-image',
+        friends:['syam','bam'],
+        posts: [post3],
+        birthDate: "2003/09/27"
+    }  
+    
+    function getAge(birthDateString){ 
+        var today = new Date()
+        var birthDates= new Date(birthDateString)
+        var age= today.getFullYear()- birthDates.getFullYear()
+        if(today.getMonth()<birthDates.getMonth()){ //if present month is lesser than birth month
+        age--
+        }
+        if(today.getMonth()===birthDates.getMonth() && today.getDate()<birthDates.getDate()){
+        // if present month is equal to birth month
+        //if present date is less than birth date
+            age--
+         }
+        //console.log("age: ",age)
+        return age
+        }
+        
+var users=[facebookUser1,facebookUser2]
+for(user of users){
+    user.age= getAge(user.birthDate)
+  
+}
+console.log(users) 
+
+</script> 
+
+<body>
+
+</body>
