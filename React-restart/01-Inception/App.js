@@ -12,6 +12,5 @@ React.createElement("div", {id:"child"},[
 ])
   //create root
   const root = ReactDOM.createRoot(document.getElementById('root'));
-
   //render the heading into html
   root.render(parent);
