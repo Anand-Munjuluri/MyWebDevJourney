@@ -35,9 +35,8 @@ app.post('/',function(req,res){
         healthy: isHealthy
     });
     res.json({
-        message: "done!"
+        message: "done!"   
     })
-    req.send(users)
 });
 
 //make all kidneys healthy
